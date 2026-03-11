@@ -2,6 +2,8 @@ import streamlit as st
 from langgraph_backend import chatbot
 from langchain_core.messages import HumanMessage
 
+
+# this file uses same langgraph_backend.py
 CONFIG = {"configurable": {"thread_id": "thread_1"}}
 
 st.set_page_config(page_title="LangGraph Chatbot")
