@@ -77,7 +77,14 @@ if user_input:
     st.session_state.message_history.append({"role": "user", "content": user_input})
 
 
-    CONFIG = {"configurable":{"thread_id":st.session_state['thread_id']}}
+    #CONFIG = {"configurable":{"thread_id":st.session_state['thread_id']}} # use this if not implemeting Langsmith
+    CONFIG = {
+        "configurable":{"thread_id":st.session_state['thread_id']},
+        "metadata":{
+            "thread_id":st.session_state["thread_id"]
+        },
+        "run_name":"chat_turns"
+    }
     # with streaming
     with st.chat_message("assistant"):
         ai_message = st.write_stream(

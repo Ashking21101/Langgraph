@@ -13,6 +13,9 @@ from langgraph.graph import add_messages # use add_messages (reducer func) for l
 import sqlite3
 
 
+
+os.environ['LANGCHAIN_PROJECT'] = 'Streamlit_Sqlite_Chatbot' # making it in a new project
+
 load_dotenv()
 
 class ChatState(TypedDict):
